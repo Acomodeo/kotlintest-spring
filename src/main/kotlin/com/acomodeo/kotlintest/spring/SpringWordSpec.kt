@@ -13,8 +13,6 @@ import org.junit.runner.RunWith
 abstract class SpringWordSpec : WordSpec(), SpringSpec {
 
     final override fun interceptSpec(context: Spec, spec: () -> Unit) {
-        super.interceptSpec(context, spec)
-
         autowireAndBeforeAll()
 
         spec()
