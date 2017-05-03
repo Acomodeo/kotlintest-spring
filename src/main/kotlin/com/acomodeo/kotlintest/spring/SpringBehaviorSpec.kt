@@ -12,6 +12,8 @@ import org.junit.runner.RunWith
 @RunWith(KotlinTestSpringRunner::class)
 abstract class SpringBehaviorSpec : BehaviorSpec(), SpringSpec {
 
+    override val oneInstancePerTest: Boolean = false
+
     final override fun interceptSpec(context: Spec, spec: () -> Unit) {
         autowireAndBeforeAll()
 

@@ -12,6 +12,8 @@ import org.junit.runner.RunWith
 @RunWith(KotlinTestSpringRunner::class)
 abstract class SpringFunSpec : FunSpec(), SpringSpec {
 
+    override val oneInstancePerTest: Boolean = false
+
     final override fun interceptSpec(context: Spec, spec: () -> Unit) {
         autowireAndBeforeAll()
 
