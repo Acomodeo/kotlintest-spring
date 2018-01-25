@@ -12,14 +12,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kotlin.version>1.1.2-2</kotlin.version>
+        <kotlin.version>1.2.21</kotlin.version>
         <junit.version>4.12</junit.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.3.RELEASE</version>
+        <version>1.5.9.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>io.kotlintest</groupId>
             <artifactId>kotlintest</artifactId>
-            <version>2.0.1</version>
+            <version>2.0.7</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -76,5 +76,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

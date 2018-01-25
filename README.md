@@ -16,3 +16,8 @@ Instead of extending the normal *Spec classes you need to extend the Spring*Spec
 
 You also need to add the @EnableKotlinTest annotation to your test context in order for the static utility class to be
 picked up.
+
+## License
+
+For License information see the file LICENSE
+
