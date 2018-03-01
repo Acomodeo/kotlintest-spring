@@ -21,6 +21,6 @@ abstract class SpringStringSpec : StringSpec(), SpringSpec {
     }
 
     @Test
-    fun loading() {}
-
+    fun loading() {
+    }
 }

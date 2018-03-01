@@ -21,6 +21,6 @@ abstract class SpringFreeSpec : FreeSpec(), SpringSpec {
     }
 
     @Test
-    fun loading() {}
-
+    fun loading() {
+    }
 }

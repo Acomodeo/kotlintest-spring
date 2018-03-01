@@ -21,6 +21,6 @@ abstract class SpringShouldSpec : ShouldSpec(), SpringSpec {
     }
 
     @Test
-    fun loading() {}
-
+    fun loading() {
+    }
 }

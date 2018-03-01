@@ -1,0 +1,28 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: openjdk
+        command: [ /bin/sh ]
+
+    working_directory: /kotlintest-spring
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - kotlintest-spring-{{ .Branch }}-{{ checksum "pom.xml" }}
+            - kotlintest-spring-master-{{ checksum "pom.xml" }}
+            - kotlintest-spring-{{ .Branch }}
+            - kotlintest-spring-master
+      - run:
+          command: |
+            ./mvnw -B versions:set -DnewVersion=${CIRCLE_BRANCH}-SNAPSHOT
+            ./mvnw -B -s settings.xml -U clean deploy
+      - save_cache:
+          key: kotlintest-spring-{{ .Branch }}-{{ checksum "pom.xml" }}
+          paths:
+            - ~/.m2
+      - store_test_results:
+          path: /kotlintest-spring/target/surefire-reports

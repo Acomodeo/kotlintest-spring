@@ -17,5 +17,4 @@ open class AutowireCapableBeanFactoryHolder {
     fun autowireFactory(factory: AutowireCapableBeanFactory) {
         Companion.factory = factory
     }
-
 }

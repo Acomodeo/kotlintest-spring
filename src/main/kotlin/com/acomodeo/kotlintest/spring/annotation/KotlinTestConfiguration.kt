@@ -12,5 +12,4 @@ open class KotlinTestConfiguration {
 
     @Bean
     open fun autowireCapableBeanFactoryHolder() = AutowireCapableBeanFactoryHolder()
-
 }

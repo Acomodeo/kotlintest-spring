@@ -21,7 +21,6 @@ abstract class SpringWordSpec : WordSpec(), SpringSpec {
     }
 
     @Test
-    fun loading() {}
-
+    fun loading() {
+    }
 }
-

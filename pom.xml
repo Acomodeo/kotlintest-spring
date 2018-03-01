@@ -19,9 +19,44 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <version>1.5.10.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <distributionManagement>
+        <repository>
+            <id>storage-bin</id>
+            <url>https://storage-bin.acomodeo.build/artifactory/public</url>
+        </repository>
+        <snapshotRepository>
+            <id>storage-bin</id>
+            <url>https://storage-bin.acomodeo.build/artifactory/public</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>central</id>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <name>bintray</name>
+            <url>https://jcenter.bintray.com</url>
+        </pluginRepository>
+        <pluginRepository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencies>
         <dependency>
@@ -78,6 +113,43 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>ktlint</id>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <target name="ktlint">
+                                <java taskname="ktlint" dir="${basedir}" fork="true"
+                                      failonerror="true"
+                                      classname="com.github.shyiko.ktlint.Main"
+                                      classpathref="maven.plugin.classpath">
+                                    <arg value="**/*.kt"/>
+                                </java>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.shyiko</groupId>
+                        <artifactId>ktlint</artifactId>
+                        <version>0.16.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.github.mhlz</groupId>
+                        <artifactId>ktlint-rules</artifactId>
+                        <version>master-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

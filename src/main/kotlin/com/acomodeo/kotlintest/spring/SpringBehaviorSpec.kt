@@ -21,6 +21,6 @@ abstract class SpringBehaviorSpec : BehaviorSpec(), SpringSpec {
     }
 
     @Test
-    fun loading() {}
-
+    fun loading() {
+    }
 }

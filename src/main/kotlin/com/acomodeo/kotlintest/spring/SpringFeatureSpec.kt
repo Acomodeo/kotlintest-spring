@@ -21,6 +21,6 @@ abstract class SpringFeatureSpec : FeatureSpec(), SpringSpec {
     }
 
     @Test
-    fun loading() {}
-
+    fun loading() {
+    }
 }
