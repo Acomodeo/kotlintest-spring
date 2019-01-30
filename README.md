@@ -1,3 +1,8 @@
+# Deprecated
+The core team of kotlintest included the functionality in thin package in their core code.
+Look at https://github.com/kotlintest/kotlintest/blob/master/doc/reference.md#spring on how to use their conectors.
+This code is not maintained right now because of this.
+
 # kotlintest-spring
 A module that allows kotlintest to work together with spring
 

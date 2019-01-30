@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 /**
  * @author Mischa Holz
  */
+@Deprecated("The core team of kotlintest wrote their own connector")
 class KotlinTestSpringRunner(val testClazz: Class<Spec>) : SpringJUnit4ClassRunner(testClazz) {
     private val kTestRunner = KTestJUnitRunner(testClazz)
 
