@@ -10,6 +10,7 @@ import org.junit.runner.RunWith
  * @author Mischa Holz
  */
 @RunWith(KotlinTestSpringRunner::class)
+@Deprecated("The core team of kotlintest wrote their own connector")
 abstract class SpringShouldSpec : ShouldSpec(), SpringSpec {
 
     override val oneInstancePerTest: Boolean = false
